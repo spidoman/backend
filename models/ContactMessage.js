@@ -1,6 +1,5 @@
-// models/ContactMessage.js
 const { DataTypes } = require('sequelize');
-const { sequelize } = require('../db/db'); // ✅ Destructure `sequelize` from the exported object
+const { sequelize } = require('../db/db'); 
 
 const ContactMessage = sequelize.define('ContactMessage', {
   id: {

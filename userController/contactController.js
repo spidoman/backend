@@ -1,15 +1,9 @@
-// controllers/contactController.js
-
 const ContactMessage = require('../models/ContactMessage');
 
-// @desc    Create a new contact message
-// @route   POST /api/contact
-// @access  Public
 exports.createMessage = async (req, res) => {
   try {
     const { name, email, message } = req.body;
 
-    // Validate input
     if (!name?.trim() || !email?.trim() || !message?.trim()) {
       return res.status(400).json({ message: 'Name, email, and message are required.' });
     }
@@ -33,9 +27,6 @@ exports.createMessage = async (req, res) => {
   }
 };
 
-// @desc    Get all contact messages
-// @route   GET /api/contact/messages
-// @access  Admin only
 exports.getAllMessages = async (req, res) => {
   try {
     const messages = await ContactMessage.findAll({

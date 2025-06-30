@@ -4,7 +4,7 @@ const { sequelize } = require('../db/db');
 const Bike = sequelize.define('Bike', {
   name:   { type: DataTypes.STRING, allowNull: false },
   price:  { type: DataTypes.INTEGER, allowNull: false },
-  image:  { type: DataTypes.STRING }, // saved filename
+  image:  { type: DataTypes.STRING }, 
 }, {
   tableName: 'bikes',
   timestamps: true,

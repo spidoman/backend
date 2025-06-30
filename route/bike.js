@@ -5,7 +5,6 @@ const path = require('path');
 const fs = require('fs');
 const bikeController = require('../userController/bikeController');
 
-// Set up multer for file uploads
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
     cb(null, 'uploads/bikes/');
@@ -17,15 +16,10 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-// === ROUTES ===
-
-// Add new bike
 router.post('/add', upload.single('image'), bikeController.addBike);
 
-// Get all bikes
 router.get('/', bikeController.getAllBikes);
 
-// Delete a bike by ID
-router.delete('/:id', bikeController.deleteBike); // ✅ NEW DELETE ROUTE
+router.delete('/:id', bikeController.deleteBike); 
 
 module.exports = router;

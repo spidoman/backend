@@ -1,5 +1,3 @@
-// userController/bikeController.js
-
 const Bike = require('../models/Bike');
 const fs = require('fs');
 const path = require('path');
